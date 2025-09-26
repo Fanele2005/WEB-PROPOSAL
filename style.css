@@ -1,0 +1,481 @@
+/* =========================
+   Reset and base styles
+   ========================= */
+
+/* CSS Reset (modern minimal) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Base font sizing with rem for scalability */
+  font-size: 100%; /* 16px default */
+}
+
+body, h1, h2, h3, h4, p, ul, ol, figure, blockquote, dl, dd {
+  margin: 0;
+  padding: 0;
+}
+
+img, picture, svg, video, canvas {
+  display: block;
+  max-width: 100%;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* =========================
+   Base theme
+   ========================= */
+
+:root {
+  /* Color palette */
+  --green-700: #2e7d32;
+  --green-100: #a8d5ba;
+  --gold-500: #ffd700;
+  --grey-900: #333333;
+  --grey-100: #f9f9f9;
+  --grey-200: #f0f4f3;
+  --white: #ffffff;
+
+  /* Typography scale (modular-ish, rem-based) */
+  --font-family-base: 'Lato', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+
+  --fs-xxl: 2.5rem;   /* ~40px */
+  --fs-xl: 2rem;      /* ~32px */
+  --fs-lg: 1.5rem;    /* ~24px */
+  --fs-md: 1.125rem;  /* ~18px */
+  --fs-sm: 1rem;      /* ~16px */
+  --fs-xs: 0.875rem;  /* ~14px */
+
+  /* Spacing scale */
+  --space-xxl: 4rem;
+  --space-xl: 3rem;
+  --space-lg: 2rem;
+  --space-md: 1.25rem;
+  --space-sm: 0.75rem;
+  --space-xs: 0.5rem;
+
+  /* Radius and shadow */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  background-color: var(--grey-100);
+  color: var(--grey-900);
+}
+
+/* Generic container width for desktop */
+section,
+header,
+footer {
+  padding: var(--space-lg) var(--space-md);
+}
+
+.site-header,
+.hero,
+.about,
+.services,
+.testimonials,
+.blog,
+.cta,
+.booking,
+.site-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================
+   Header and navigation
+   ========================= */
+
+.site-header {
+  background-color: var(--white);
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: var(--green-700);
+  letter-spacing: 0.02em;
+}
+
+.site-nav .nav-list {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--grey-900);
+  font-weight: 500;
+  font-size: var(--fs-sm);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  background-color: var(--grey-200);
+  outline: none;
+}
+
+/* =========================
+   Hero
+   ========================= */
+
+.hero {
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+  background: linear-gradient(to right, var(--green-100), var(--gold-500));
+  border-radius: var(--radius-md);
+}
+
+.hero-image {
+  margin: 0 auto var(--space-md);
+  height: auto;
+}
+
+.hero-content h1 {
+  font-size: var(--fs-xxl);
+  margin-bottom: var(--space-xs);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.hero-content p {
+  font-size: var(--fs-md);
+  margin-bottom: var(--space-md);
+}
+
+/* CTA button */
+.cta-button {
+  background-color: var(--green-700);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+}
+
+.cta-button:hover {
+  background-color: #256a2a;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.cta-button:focus {
+  outline: 2px solid var(--gold-500);
+  outline-offset: 3px;
+}
+
+.cta-button:active {
+  transform: translateY(0);
+}
+
+/* =========================
+   About
+   ========================= */
+
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  padding: var(--space-xl) var(--space-md);
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+}
+
+.about-photo {
+  max-width: 18.75rem; /* 300px */
+  border-radius: var(--radius-md);
+  flex: 0 0 auto;
+}
+
+.about-text {
+  flex: 1 1 22rem;
+  min-width: 18rem;
+}
+
+.about-text h2 {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--space-xs);
+}
+
+.about-text p {
+  font-size: var(--fs-sm);
+}
+
+/* =========================
+   Services
+   ========================= */
+
+.services {
+  padding: var(--space-xl) var(--space-md);
+  background-color: var(--grey-200);
+  border-radius: var(--radius-md);
+}
+
+.services h2 {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--space-md);
+}
+
+.service-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.service-card {
+  background-color: var(--white);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.service-card h3 {
+  font-size: var(--fs-lg);
+  margin-bottom: var(--space-xs);
+}
+
+.service-card p {
+  font-size: var(--fs-sm);
+}
+
+/* =========================
+   Testimonials
+   ========================= */
+
+.testimonials {
+  padding: var(--space-xl) var(--space-md);
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+}
+
+.testimonials h2 {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--space-md);
+}
+
+.testimonial {
+  margin-bottom: var(--space-lg);
+}
+
+.testimonial-photo {
+  width: 5rem; /* 80px */
+  height: 5rem;
+  border-radius: 50%;
+  margin-bottom: var(--space-sm);
+  object-fit: cover;
+}
+
+blockquote {
+  font-style: italic;
+  margin-bottom: var(--space-xs);
+}
+
+/* =========================
+   Blog
+   ========================= */
+
+.blog {
+  padding: var(--space-xl) var(--space-md);
+  background-color: var(--grey-200);
+  border-radius: var(--radius-md);
+}
+
+.blog h2 {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--space-md);
+}
+
+.blog-preview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.blog-card {
+  background-color: var(--white);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.text-link {
+  color: var(--green-700);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.text-link:hover,
+.text-link:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* =========================
+   CTA section
+   ========================= */
+
+.cta {
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+  background-color: var(--gold-500);
+  border-radius: var(--radius-md);
+}
+
+.cta h2 {
+  font-size: var(--fs-lg);
+  margin-bottom: var(--space-md);
+}
+
+/* =========================
+   Booking
+   ========================= */
+
+.booking {
+  padding: var(--space-xl) var(--space-md);
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+}
+
+.booking h2 {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--space-md);
+}
+
+.booking-frame {
+  border: 0;
+  width: 100%;
+  height: 37.5rem; /* 600px */
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+.site-footer {
+  padding: var(--space-md);
+  background-color: var(--green-700);
+  color: var(--white);
+  text-align: center;
+  border-radius: var(--radius-md);
+}
+
+.site-footer p {
+  margin-bottom: var(--space-sm);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+.social-link {
+  color: var(--gold-500);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.social-link:hover,
+.social-link:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* =========================
+   Responsive design
+   Breakpoints: 1024, 768, 480
+   ========================= */
+
+/* Tablet (≤ 1024px) */
+@media (max-width: 64rem) { /* 1024px */
+  .service-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blog-preview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-content h1 {
+    font-size: 2.25rem;
+  }
+}
+
+/* Large mobile / small tablet (≤ 768px) */
+@media (max-width: 48rem) { /* 768px */
+  .site-header {
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .site-nav .nav-list {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .about {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .service-columns,
+  .blog-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: var(--fs-sm);
+  }
+}
+
+/* Mobile (≤ 480px) */
+@media (max-width: 30rem) { /* 480px */
+  section,
+  header,
+  footer {
+    padding: var(--space-md) var(--space-sm);
+  }
+
+  .logo {
+    font-size: var(--fs-md);
+  }
+
+  .hero {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .about-photo {
+    max-width: 100%;
+  }
+
+  .cta h2 {
+    font-size: var(--fs-md);
+  }
+}
