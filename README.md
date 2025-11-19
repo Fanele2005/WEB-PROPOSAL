@@ -44,13 +44,7 @@ It includes interactive elements, dynamic content, SEO optimization, responsive 
 - Clean URL structure (anchors).
 - Image alt attributes and descriptive filenames.
 - Mobile‑friendly responsive design.
-
-### Performance & Accessibility
-- Responsive images with `srcset` and `sizes`.
-- Lazy loading for non‑critical images.
-- Preconnect and preload for fonts.
-- Skip‑to‑content link for screen readers.
-- ARIA attributes for navigation, tabs, accordion, modal, and forms.
+- **Robots.txt** and **Sitemap.xml** included for search engine indexing.
 
 ---
 
@@ -65,5 +59,4 @@ It includes interactive elements, dynamic content, SEO optimization, responsive 
 ---
 
 ## 📂 Project Structure
-Since this is a single‑file project, everything is contained in one HTML file:
 
