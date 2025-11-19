@@ -1,38 +1,69 @@
-## Change log (Part 2)
+# FANSS.co Coaching Website
 
-- 2025-09-26 — External stylesheet and base styles
-  - Created `css/style.css` and linked it to all pages.
-  - Moved inline `<style>` rules from HTML into `style.css`.
-  - Implemented CSS reset and base theme variables (colors, typography, spacing).
-  - Established desktop-first layout, using rem-based units for scalability.
+A **single‑file HTML website** for FANSS.co Coaching that demonstrates modern web development practices.  
+It includes interactive elements, dynamic content, SEO optimization, responsive design, and form validation — all in one HTML file.
 
-- 2025-09-26 — Typography and accessibility
-  - Applied consistent typography scale (headings, body, links).
-  - Added improved link text for blog items for SEO and screen readers.
-  - Included `aria-label` for primary navigation and social links.
-  - Ensured descriptive `alt` text for images.
+---
 
-- 2025-09-26 — Layout structure (Grid & Flexbox)
-  - Header uses Flexbox for alignment.
-  - Services and Blog sections use CSS Grid for multi-column layouts on desktop.
-  - About section uses Flexbox with responsive wrapping.
+## 🌟 Features
 
-- 2025-09-26 — Visual styles and interactivity
-  - Added button hover, focus, and active states (`:hover`, `:focus`, `:active`).
-  - Introduced card styling with shadows and border radii.
-  - Added gradient background for the hero section.
+### Structure & Content
+- Semantic HTML5 layout (`<header>`, `<main>`, `<section>`, `<footer>`).
+- Hero section with responsive images.
+- About, Services, Testimonials, Blog, Gallery, Map, Enquiry, Contact, and Booking sections.
+- Mobile‑friendly responsive design.
 
-- 2025-09-26 — Responsive design
-  - Implemented breakpoints at 1024px, 768px, and 480px using media queries.
-  - Multi-column layouts gracefully collapse to single column on smaller screens.
-  - Adjusted font sizes and spacing per breakpoint.
-  - Navigation wraps for smaller viewports.
+### Interactive Elements
+- **Tabs**: Switch between Benefits, Process, and Pricing.
+- **Accordion**: Expand/collapse FAQs.
+- **Modal**: Quick tip popup.
+- **Gallery with Lightbox**: Click images to view larger versions.
+- **Interactive Map**: Leaflet map centered on Cape Town with marker and popup.
 
-- 2025-09-26 — Responsive images and performance
-  - Added `picture`, `srcset`, and `sizes` for hero and photos.
-  - Applied `loading="lazy"` to non-critical images.
-  - Ensured iframes have a title and are styled responsively.
+### Dynamic Content
+- Blog posts rendered dynamically from a JavaScript array.
+- Search bar to filter posts by keyword.
+- Sort dropdown (Newest, Oldest, Title A–Z).
 
-- 2025-09-26 — README updates
-  - Added screenshots for desktop, tablet, and mobile views (see `/docs/screenshots/`).
-  - Updated references list with any new sources/tools.
+### Forms
+- **Enquiry Form**:
+  - Collects name, email, phone, enquiry type, date, and message.
+  - JavaScript validation for required fields, formats, and lengths.
+  - Displays cost/availability response dynamically.
+- **Contact Form**:
+  - Collects name, email, phone, message type, and message.
+  - Validates inputs.
+  - Compiles data into a `mailto:` link for sending via default email client.
+
+### SEO Best Practices
+- Title and meta description.
+- Keywords meta tag.
+- Open Graph and Twitter Card tags for social sharing.
+- Canonical link.
+- JSON‑LD structured data for LocalBusiness.
+- Clean URL structure (anchors).
+- Image alt attributes and descriptive filenames.
+- Mobile‑friendly responsive design.
+
+### Performance & Accessibility
+- Responsive images with `srcset` and `sizes`.
+- Lazy loading for non‑critical images.
+- Preconnect and preload for fonts.
+- Skip‑to‑content link for screen readers.
+- ARIA attributes for navigation, tabs, accordion, modal, and forms.
+
+---
+
+## 🛠️ Technologies Used
+- **HTML5** (single file structure).
+- **CSS3** (custom styles, transitions, responsive grid).
+- **JavaScript (ES6)** for interactivity, validation, dynamic content.
+- **jQuery** (optional, loaded via CDN).
+- **Leaflet.js** for interactive maps.
+- **GLightbox** for gallery lightbox.
+
+---
+
+## 📂 Project Structure
+Since this is a single‑file project, everything is contained in one HTML file:
+
