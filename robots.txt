@@ -1,0 +1,8 @@
+# robots.txt for FANSS.co Coaching
+# Instructs search engine crawlers on which pages to index
+
+User-agent: *
+Disallow:
+
+# Point crawlers to the sitemap
+Sitemap: https://fanss.co/sitemap.xml
